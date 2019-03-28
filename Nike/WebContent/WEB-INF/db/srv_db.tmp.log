@@ -1,0 +1,6 @@
+/*C3*/SET SCHEMA PUBLIC
+INSERT INTO USERS VALUES('askldqwodjqwjdopwqjp','asijdwq@sakjd.cas','askdqwdkjsad')
+COMMIT
+/*C7*/SET SCHEMA PUBLIC
+INSERT INTO USERS VALUES('1231asd','asdw@sadkla.cosa','asdlmqwkda')
+COMMIT
