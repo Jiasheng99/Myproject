@@ -28,6 +28,7 @@ public class Login {
 				ps.setString(1, uName);
 				ps.setString(2, uPass);
 				ps.setString(3, uEmail);
+				conn.commit();
 				if(ps.executeUpdate()==1) {
 					return true;
 				}
@@ -35,16 +36,23 @@ public class Login {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			try{
-				if(ps != null) {
+			if(ps != null) {
+				try {
 					ps.close();
-				}
-			
-			}catch(SQLException e) {
-				e.printStackTrace();
+				}catch (SQLException e) {  }
+			}
+			if (prest != null) {
+			    try {
+			        prest.close();
+			    } catch (SQLException e) {  }
+			}
+			if (conn != null) {
+			    try {
+			        conn.close();
+			    } catch (SQLException e) {  }
 			}
 		}
 		return false;
 	}
-	
+
 }
