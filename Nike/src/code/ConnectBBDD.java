@@ -8,12 +8,13 @@ public class ConnectBBDD {
 
 	static String DRIVER="org.hsqldb.jdbcDriver";
 	static String URL="jdbc:hsqldb:C:\\Users\\pc10\\eclipse-workspace\\Nike\\WebContent\\WEB-INF\\db\\srv_db.tmp";
+	static String Pas="password123";
 	private final static Logger LOGGER = Logger.getLogger("bitacora.subnivel.Control");
 	public static Connection getConnection() {
 		Connection con = null;
 		try {
 			Class.forName(DRIVER);
-			con=DriverManager.getConnection(URL,"sa", "");
+			con=DriverManager.getConnection(URL,"sa", Pas);
 		}catch(ClassNotFoundException | SQLException e) {
 			LOGGER.log(Level.INFO, "Error: "+e);
 		}
