@@ -7,6 +7,9 @@ import java.sql.SQLException;
 
 public class Login {
 	
+	private Login() {
+	}
+	
 	public static boolean insertUser(String uName, String uPass, String uEmail) {
 		Connection con;
 		con=ConnectBBDD.getConnection();
