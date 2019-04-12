@@ -39,17 +39,23 @@ public class Login {
 			if(ps != null) {
 				try {
 					ps.close();
-				}catch (SQLException e) {  }
+				}catch (SQLException e) { 
+					e.printStackTrace();
+				}
 			}
 			if (prest != null) {
 			    try {
 			        prest.close();
-			    } catch (SQLException e) {  }
+			    } catch (SQLException e) { 
+			    	e.printStackTrace();
+			    }
 			}
 			if(resultados != null) {
 				try {
 					resultados.close();
-				}catch (SQLException e) {  }
+				}catch (SQLException e) { 
+					e.printStackTrace();
+				}
 			}
 		}
 		return false;
