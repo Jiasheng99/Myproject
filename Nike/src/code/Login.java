@@ -14,12 +14,13 @@ public class Login {
 		Connection conn;
 		conn=ConnectBBDD.getConnection();
 		PreparedStatement prest =null;
+		ResultSet resultados =null;
 		
 		try {
 			String consulta1 = "select * from users where nick=?;";
 			prest=conn.prepareStatement(consulta1);
 			prest.setString(1, uName);
-			ResultSet resultados=prest.executeQuery();
+			resultados=prest.executeQuery();
 			if (resultados.next()) {
 				return false;
 			}else {
@@ -50,6 +51,11 @@ public class Login {
 			    try {
 			        conn.close();
 			    } catch (SQLException e) {  }
+			}
+			if(resultados != null) {
+				try {
+					resultados.close();
+				}catch (SQLException e) {  }
 			}
 		}
 		return false;
