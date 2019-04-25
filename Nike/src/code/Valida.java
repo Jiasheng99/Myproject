@@ -1,6 +1,9 @@
 package code;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,9 +18,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Valida")
 public class Valida extends HttpServlet {
+    Properties prop = new Properties();
+	InputStream is = null;
 	private static final long serialVersionUID = 1L;
-       
-    /**
+	private static Pattern Email=null;
+	private static Pattern Pass=null;
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public Valida() {
@@ -36,10 +42,16 @@ public class Valida extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Pattern Nick = Pattern.compile("[a-zA-Z]{1,10}");
-		Pattern Email = Pattern.compile("^[a-z0-9]{1,}(\\-)?(\\.)?[a-z0-9]{1,}@[a-z]{1,}(\\-)?[a-z]{1,}(\\.[a-z0-9]{2,}){1,}$");
-		Pattern Pass = Pattern.compile("[a-zA-Z0-9]{8,}");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		try {
+			is = new FileInputStream("/pattern.properties");
+			prop.load(is);
+		} catch(IOException e) {
+			System.out.println(e.toString());
+		}
+		Pattern Nick = Pattern.compile(prop.getProperty("servidor.datos1"));
+		Email = Pattern.compile(prop.getProperty("servidor.datos2"));
+		Pass = Pattern.compile(prop.getProperty("servidor.datos3"));
 		String nick = request.getParameter("nick");
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
