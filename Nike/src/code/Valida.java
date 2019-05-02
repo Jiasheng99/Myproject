@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Valida")
 public class Valida extends HttpServlet {
-    Properties prop = new Properties();
-	InputStream is = null;
+    private static Properties prop = new Properties();
+	private static InputStream is = null;
 	private static final long serialVersionUID = 1L;
 	private static Pattern Email=null;
 	private static Pattern Pass=null;
@@ -29,6 +29,12 @@ public class Valida extends HttpServlet {
     public Valida() {
         super();
         // TODO Auto-generated constructor stub
+		try {
+			is = new FileInputStream("./jsp/pattern.properties");
+			prop.load(is);
+		} catch(IOException e) {
+			System.out.println(e.toString());
+		}
     }
 
 	/**
@@ -43,12 +49,6 @@ public class Valida extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		try {
-			is = new FileInputStream("/pattern.properties");
-			prop.load(is);
-		} catch(IOException e) {
-			System.out.println(e.toString());
-		}
 		Pattern Nick = Pattern.compile(prop.getProperty("servidor.datos1"));
 		Email = Pattern.compile(prop.getProperty("servidor.datos2"));
 		Pass = Pattern.compile(prop.getProperty("servidor.datos3"));
