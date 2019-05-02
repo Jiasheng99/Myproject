@@ -21,8 +21,6 @@ public class Valida extends HttpServlet {
     private static Properties prop = new Properties();
 	private static InputStream is = null;
 	private static final long serialVersionUID = 1L;
-	private static Pattern Email=null;
-	private static Pattern Pass=null;
 	/**
      * @see HttpServlet#HttpServlet()
      */
@@ -50,8 +48,8 @@ public class Valida extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		Pattern Nick = Pattern.compile(prop.getProperty("servidor.datos1"));
-		Email = Pattern.compile(prop.getProperty("servidor.datos2"));
-		Pass = Pattern.compile(prop.getProperty("servidor.datos3"));
+		Pattern Email = Pattern.compile(prop.getProperty("servidor.datos2"));
+		Pattern Pass = Pattern.compile(prop.getProperty("servidor.datos3"));
 		String nick = request.getParameter("nick");
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
