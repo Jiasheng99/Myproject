@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Valida")
 public class Valida extends HttpServlet {
-    private static Properties prop = new Properties();
-	private static InputStream is = null;
+    Properties prop = new Properties();
+	InputStream is = null;
 	private static final long serialVersionUID = 1L;
 	/**
      * @see HttpServlet#HttpServlet()
