@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class ConnectBBDD {
-	static String DRIVER="org.hsqldb.jdbcDriver";
-	static String URL="jdbc:hsqldb:C:\\Users\\pc10\\eclipse-workspace\\Nike\\WebContent\\WEB-INF\\db\\srv_db.tmp";
-	static String Pas="password123";
-	private final static Logger LOGGER = Logger.getLogger("bitacora.subnivel.Control");
+	private static String DRIVER="org.hsqldb.jdbcDriver";
+	private static String URL="jdbc:hsqldb:C:\\Users\\pc10\\eclipse-workspace\\Nike\\WebContent\\WEB-INF\\db\\srv_db.tmp";
+	private static String Pas="password123";
+	private final static Logger LOGGER = Logger.getLogger("code");
 	private ConnectBBDD() {	
 	}
 	public static Connection getConnection() {
