@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,12 +28,13 @@ public class Valida extends HttpServlet {
      */
     public Valida() {
         super();
+        final Logger LOGGER = Logger.getLogger("code");
         // TODO Auto-generated constructor stub
 		try {
-			is = new FileInputStream("./jsp/pattern.properties");
+			is = new FileInputStream("../resources/pattern.properties");
 			prop.load(is);
 		} catch(IOException e) {
-			System.out.println(e.toString());
+			LOGGER.log(Level.INFO, "Error: "+e);
 		}
     }
 
