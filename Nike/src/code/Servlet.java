@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class Servlet
+ * @author Jiasheng
+ *
  */
 @WebServlet("/Servlet")
 public class Servlet extends HttpServlet {
@@ -24,6 +26,10 @@ public class Servlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @param request is from client to server
+	 * @param response is from server to client
+	 * @throws ServletException for error in the servlet 
+	 * @throws IOException for error in the input or output
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -32,6 +38,10 @@ public class Servlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @param request is from client to server
+	 * @param response is from server to client
+	 * @throws ServletException for error in the servlet 
+	 * @throws IOException for error in the input or output
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

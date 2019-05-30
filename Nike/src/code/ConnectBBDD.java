@@ -4,6 +4,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+/**
+ * Servlet implementation class Valida
+ * @author Jiasheng
+ *
+ */
 public class ConnectBBDD {
 	private static String DRIVER="org.hsqldb.jdbcDriver";
 	private static String URL="jdbc:hsqldb:C:\\Users\\pc10\\eclipse-workspace\\Nike\\WebContent\\WEB-INF\\db\\srv_db.tmp";
@@ -11,6 +16,9 @@ public class ConnectBBDD {
 	private final static Logger LOGGER = Logger.getLogger("code");
 	private ConnectBBDD() {	
 	}
+	/**
+	 * @return connection
+	 */
 	public static Connection getConnection() {
 		Connection con = null;
 		try {

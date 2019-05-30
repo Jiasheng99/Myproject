@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Login.java
- * @author windows10
+ * Servlet implementation class Login
+ * @author Jiasheng
  * This class is for verify the users who want login or register to de bbdd
  */
 public class Login {

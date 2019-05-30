@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class Valida
+ * @author Jiasheng
+ * This class is for the validation
  */
 @WebServlet("/Valida")
 public class Valida extends HttpServlet {
